@@ -1,0 +1,19 @@
+$ docker container run -d nginx    (3 times)
+
+$ docker ps
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS     NAMES
+f7ff69ef4573   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   80/tcp    pensive_galois
+564cdc5ddf1d   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   80/tcp    cool_satoshi
+d7b31b5f738d   nginx     "/docker-entrypoint.…"   2 minutes ago        Up 2 minutes        80/tcp    upbeat_dirac
+
+$ docker container stop f7 56
+f7
+56
+
+$ docker ps -a
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS     NAMES
+f7ff69ef4573   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 12 seconds ago             pensive_galois
+564cdc5ddf1d   nginx     "/docker-entrypoint.…"   2 minutes ago        Exited (0) 12 seconds ago             cool_satoshi
+d7b31b5f738d   nginx     "/docker-entrypoint.…"   3 minutes ago        Up 3 minutes                80/tcp    upbeat_dirac

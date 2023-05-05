@@ -1,0 +1,5 @@
+PS C:\WINDOWS\system32> docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+PS C:\WINDOWS\system32> docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
