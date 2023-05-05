@@ -1,2 +1,2 @@
-# devops-with-docker
-DevOps with Docker Course
+# DevOps with Docker
+DevOps with Docker Course: https://devopswithdocker.com/
