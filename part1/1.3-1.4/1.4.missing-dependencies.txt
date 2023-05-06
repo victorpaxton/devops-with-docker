@@ -1,0 +1,26 @@
+$ docker run -d --rm -it --name web ubuntu sh -c "while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
+
+1aeaa7b73a9ff0095172ca8eecd78d036271ce93f83a82da69be48e56c10c8ec
+
+$ docker exec -it web bash
+
+root@1aeaa7b73a9f:/# apt-get update
+root@1aeaa7b73a9f:/# apt-get install curl
+
+root@1aeaa7b73a9f:/# curl http://helsinki.fi
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.20.1</center>
+</body>
+</html>
+root@1aeaa7b73a9f:/# curl http://helsinki.fi/
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.20.1</center>
+</body>
+</html>
