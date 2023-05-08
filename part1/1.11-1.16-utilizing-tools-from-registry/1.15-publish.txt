@@ -1,0 +1,6 @@
+https://hub.docker.com/r/hhqthang/spring-project
+
+
+$ docker tag spring-project hhqthang/spring-project
+
+$ docker push hhqthang/spring-project
