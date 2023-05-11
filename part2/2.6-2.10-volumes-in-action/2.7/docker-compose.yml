@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ..\..\..\part1\1.11-1.16-utilizing-tools-from-registry\material-applications\example-backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=example
+    container_name: backend-container
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  frontend:
+    build: ..\..\..\part1\1.11-1.16-utilizing-tools-from-registry\material-applications\example-frontend
+    ports:
+      - 5000:5000
+    container_name: frontend-container
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-container
+    restart: unless-stopped
+
+  db:
+    image: postgres:14.7-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=example
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    container_name: db_example_backend
+
+volumes:
+  database:

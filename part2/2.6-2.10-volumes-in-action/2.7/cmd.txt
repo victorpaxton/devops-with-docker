@@ -1,0 +1,19 @@
+To view the data 
+
+$ docker-compose exec db psql -U postgres 
+
+postgres=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner
+--------+----------+-------+----------
+ public | messages | table | postgres
+(1 row) 
+ 
+postgres=# SELECT * FROM messages;
+ id |  body
+----+--------
+  1 | pong
+  2 | first
+  3 |
+  4 | second
+(4 rows)

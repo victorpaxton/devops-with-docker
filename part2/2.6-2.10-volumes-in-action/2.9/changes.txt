@@ -1,0 +1,3 @@
+Change the env in frontend dockerfile: http://localhost:8080 -> http://localhost/api
+
+ENV REACT_APP_BACKEND_URL=http://localhost/api

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ..\..\..\part1\1.11-1.16-utilizing-tools-from-registry\material-applications\example-backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+    container_name: backend-container
+    restart: unless-stopped
+
+  frontend:
+    build: ..\..\..\part1\1.11-1.16-utilizing-tools-from-registry\material-applications\example-frontend
+    ports:
+      - 5000:5000
+    container_name: frontend-container
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-container
+    restart: unless-stopped
